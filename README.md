@@ -1,2 +1,7 @@
-# MR_TOUR
-Group Project
+ # 🧳 미래투어(Mirae Tour)
+ 
+ 렌터카, 숙박, 티켓을 판매하는 국내여행 전문 웹사이트
+ 
+ 
+
+
