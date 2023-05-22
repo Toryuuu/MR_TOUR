@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="BoardDAO">
+
+<!-- 1:1문의 = BOARD -->
+	<!-- 글쓰기 -->
+	<insert id="createBoard">
+		INSERT INTO BOARD (
+			BOARD_NO, 
+			B_TITLE, 
+			B_CONTENT,
+			MEMBER_NAME,
+			MEMBER_ID
+		) VALUES(
+			BOARD_SEQ.NEXTVAL, 
+			#{b_title}, 
+			#{b_content},
+			#{member_name},
+			#{member_id}
+		)
+	</insert>
+
+	<!-- 글 수정 -->
+	<update id="updateBoard">
+		UPDATE BOARD
+		SET
+		B_TITLE = #{b_title},
+		B_CONTENT = #{b_content},
+		B_COMMENTS = #{b_comments}
+		WHERE
+		BOARD_NO = #{board_no}
+	</update>
+
+	<!-- 글 삭제 -->
+	<delete id="deleteBoard">
+		UPDATE BOARD SET B_SHOW='N' WHERE BOARD_NO = #{board_no}
+	</delete>
+	
+	<!-- 글 삭제 체크 -->
+	<select id="checkBoard" resultType="java.lang.Integer"> 
+		SELECT COUNT(*) FROM BOARD WHERE BOARD_NO = #{board_no} AND B_SHOW = 'Y' 
+	</select>
+
+	<!-- 조회수 -->
+	<update id="b_viewCnt">
+		UPDATE BOARD
+		SET
+		B_VIEWCNT = B_VIEWCNT+1
+		WHERE
+		BOARD_NO = #{board_no}
+	</update>
+
+	<!-- 게시글 보기 -->
+	<select id="readBoard" resultType="board">
+		SELECT 
+		*
+		FROM 
+		BOARD
+		WHERE
+		BOARD_NO = #{board_no} AND B_SHOW = 'Y'
+	</select>
+	
+	<!-- 이전글 -->
+	<select id="previousB" resultType="board">
+	<![CDATA[
+	SELECT * FROM BOARD WHERE BOARD_NO = 
+	(SELECT MAX(BOARD_NO) FROM BOARD WHERE B_SHOW='Y' AND BOARD_NO < #{board_no})
+	]]>
+	</select>
+	
+	<!-- 다음글 -->
+	<select id="nextB" resultType="board">
+	<![CDATA[
+	SELECT * FROM BOARD WHERE BOARD_NO = 
+	(SELECT MIN(BOARD_NO) FROM BOARD WHERE B_SHOW='Y' AND BOARD_NO > #{board_no})
+	]]>
+	</select>
+
+	<!-- 목록 -->
+	<select id="listAllBoard" resultType="board">
+		SELECT * FROM 
+		(SELECT ROWNUM AS RN, A.* FROM (SELECT * FROM (
+		SELECT * FROM BOARD <include refid="search"></include>
+		) ORDER BY BOARD_NO DESC, B_WRITEDATE DESC) A ) 
+		WHERE RN BETWEEN #{start} AND #{end}
+	</select>
+	
+	<!-- 게시글 갯수 -->
+	<select id="getCountBoard" resultType="java.lang.Integer">
+		SELECT COUNT(*) FROM BOARD <include refid="search"></include>
+	</select>
+	
+	<!-- 검색조건 -->
+		<sql id="search">
+		    <choose>
+		        <when test="searchOption == 'ALL'">
+		            WHERE B_SHOW='Y' AND 
+		            (MEMBER_NAME LIKE '%'||#{keyword}||'%' 
+		                OR B_CONTENT LIKE LOWER('%'||#{keyword}||'%')
+		                OR B_CONTENT LIKE UPPER('%'||#{keyword}||'%')
+		                OR B_TITLE LIKE LOWER('%'||#{keyword}||'%')
+		                OR B_TITLE LIKE UPPER('%'||#{keyword}||'%')
+		            )
+		        </when>
+		        <otherwise>
+		            WHERE B_SHOW='Y' AND 
+		            (${searchOption} LIKE LOWER('%'||#{keyword}||'%') OR
+		            ${searchOption} LIKE UPPER('%'||#{keyword}||'%'))
+		        </otherwise>
+		    </choose>
+		</sql>
+</mapper>

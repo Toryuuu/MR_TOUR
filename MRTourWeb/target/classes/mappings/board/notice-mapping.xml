@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="NoticeDAO">
+
+<!-- 공지사항 = NOTICE -->
+
+		<!-- 글쓰기 -->
+	<insert id="createNotice">
+		INSERT INTO NOTICE (
+			NOTICE_NO, 
+			NOTICE_TITLE,
+			NOTICE_SUB,
+			MEMBER_NAME,
+			NOTICE_CONTENT 
+		) VALUES(
+			NOTICE_SEQ.NEXTVAL, 
+			#{notice_title}, 
+			#{notice_sub}, 
+			#{member_name},
+			#{notice_content} 
+		)
+	</insert>
+	
+	<!-- 글 수정 -->
+	<update id="updateNotice">
+		UPDATE NOTICE
+		SET
+		NOTICE_TITLE = #{notice_title},
+		NOTICE_CONTENT = #{notice_content}
+		WHERE
+		NOTICE_NO = #{notice_no}
+	</update>
+
+	<!-- 글 삭제 -->
+	<delete id="deleteNotice">
+		UPDATE NOTICE SET N_SHOW='N' WHERE NOTICE_NO = #{notice_no}
+	</delete>
+
+	<!-- 글 삭제 체크 -->
+	<select id="checkNotice" resultType="java.lang.Integer"> 
+		SELECT COUNT(*) FROM NOTICE WHERE NOTICE_NO = #{notice_no} AND N_SHOW = 'Y' 
+	</select>
+	
+	
+	<!-- 게시글 보기 -->
+	<select id="readNotice" resultType="notice">
+		SELECT 
+		*
+		FROM 
+		NOTICE
+		WHERE
+		NOTICE_NO = #{notice_no} AND N_SHOW = 'Y'
+	</select>
+	
+	<!-- 목록 -->
+	<select id="listAllNotice" resultType="notice">
+		SELECT * FROM 
+		(SELECT ROWNUM AS RN, A.* FROM (SELECT * FROM (
+		SELECT * FROM NOTICE <include refid="n_search"></include>
+		) ORDER BY NOTICE_NO DESC, NOTICE_DATE DESC) A ) 
+		WHERE RN BETWEEN #{start} AND #{end}
+	</select>
+	
+	<!-- 이전글 -->
+		<select id="previousN" resultType="notice">
+			<![CDATA[
+			SELECT * FROM NOTICE WHERE NOTICE_NO = 
+			(SELECT MAX(NOTICE_NO) FROM NOTICE WHERE N_SHOW='Y' AND NOTICE_NO < #{notice_no})
+			]]>
+		</select>
+	
+	<!-- 다음글 -->
+		<select id="nextN" resultType="notice">
+			<![CDATA[
+			SELECT * FROM NOTICE WHERE NOTICE_NO = 
+			(SELECT MIN(NOTICE_NO) FROM NOTICE WHERE N_SHOW='Y' AND NOTICE_NO > #{notice_no})
+			]]>
+		</select>
+	
+	
+		<!-- 조회수 -->
+	<update id="n_viewCnt">
+		UPDATE NOTICE
+		SET
+		N_VIEWCNT = N_VIEWCNT+1
+		WHERE
+		NOTICE_NO = #{NOTICE_NO}
+	</update>
+	
+	<!-- 게시글 갯수 -->
+	<select id="getCountNotice" resultType="java.lang.Integer">
+		SELECT COUNT(*) FROM NOTICE <include refid="n_search"></include>
+	</select>
+	
+		<!-- 검색조건 -->
+		<sql id="n_search">
+		    <choose>
+		        <when test="searchOption == 'ALL'">
+		            WHERE N_SHOW='Y' AND 
+		            (NOTICE_CONTENT LIKE LOWER('%'||#{keyword}||'%')
+		                OR NOTICE_CONTENT LIKE UPPER('%'||#{keyword}||'%')
+		                OR NOTICE_TITLE LIKE LOWER('%'||#{keyword}||'%')
+		                OR NOTICE_TITLE LIKE UPPER('%'||#{keyword}||'%')
+		            )
+		        </when>
+		        <otherwise>
+		            WHERE N_SHOW='Y' AND 
+		            (${searchOption} LIKE LOWER('%'||#{keyword}||'%') OR
+		            ${searchOption} LIKE UPPER('%'||#{keyword}||'%'))
+		        </otherwise>
+		    </choose>
+		</sql>
+		
+</mapper>

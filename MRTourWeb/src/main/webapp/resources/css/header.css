@@ -1,0 +1,87 @@
+
+/* header */
+header{
+	position: relative;
+
+}
+header .logo {
+	position: relative;
+	text-align: center;
+	left: 37%;
+	padding-bottom: 20px;
+	width: 500px;
+
+}
+
+header .login {
+    position: relative;
+    width: 100%;
+    float: left;
+    font-family: 'Nanum Gothic', sans-serif;
+    word-spacing: 8px;
+    /* 글자 사이의 간격*/
+    font-size: 14px;
+    text-align: right;
+    padding-top: 1%;
+    right: 2%;
+}
+
+
+header .login a {
+    /*하이퍼링크 된곳 css 효과 */
+    text-decoration: none;
+    /*원래 하이퍼링크가 걸리면 밑줄
+    선이 생긴다. 이 밑줄선을 제거하는 효과 */
+    color: #333;
+    /*하이퍼링크 된곳 글자색 지정*/
+}
+
+header .login a:hover {
+    /* 하이퍼링크 된곳 마우스 오버시 css효과*/
+    color: rgb(86, 221, 255);
+}
+
+
+/* nav */
+.nav {
+    position: absolute;
+    left: 33%;
+  
+}
+
+
+.nav ul {
+    list-style: none;
+    /* 목록 앞 점 없앰 */
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 100;
+    /*글자를 굵게 */
+}
+
+.nav li {
+	
+    float: left;
+    /* 목록 수직정렬을 수평정렬로 바꿈*/
+    margin: 0px 15px;
+    /*상하 바깥여백을 0픽셀,좌우 바깥여백
+    을 5픽셀 */
+    font-size: 25px;
+    /*글자크기*/
+}
+
+.nav a {
+    /* 메뉴 하이퍼링크 된곳 css 효과 */
+    display: block;
+    text-decoration: none;
+    /*밑줄선 제거*/
+    color: #333;
+    /*글자색*/
+}
+
+.nav a:hover {
+    /*하이퍼링크 된곳 마우스 오버시 css 효과*/
+    color: rgb(86, 221, 255);
+}
+
+/* //nav */
+

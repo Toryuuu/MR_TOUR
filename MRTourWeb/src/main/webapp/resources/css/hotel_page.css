@@ -1,0 +1,1297 @@
+@charset "UTF-8";
+
+/* 전체 */
+element.style {
+    display: flex;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) body {
+    width: 1200px;
+    max-width: 100%;
+}
+
+body {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: block;
+    margin: 8px;
+}
+
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --primary: #51abf3;
+    --secondary: #33b893;
+    --warning: #ffbf00;
+    --error: #fa5b4a;
+    --gray-50: #f8f9fa;
+    --gray-60: #f5f6f7;
+    --gray-80: #f1f3f5;
+    --gray-100: #e9ecef;
+    --gray-200: #dee2e6;
+    --gray-300: #ced4da;
+    --gray-400: #adb5bd;
+    --gray-500: #848c94;
+    --gray-600: #666d75;
+    --gray-700: #495056;
+    --gray-800: #343a40;
+    --gray-900: #212529;
+    --blue-50: #f5fbff;
+    --blue-80: #e7f4fd;
+    --blue-100: #cbe7fd;
+    --blue-200: #a7d4f9;
+    --blue-300: #79bef5;
+    --blue-400: #51abf3;
+    --blue-500: #2b96ed;
+    --blue-600: #1583db;
+    --blue-700: #0a70c2;
+    --blue-800: #025ba5;
+    --blue-900: #01457d;
+    --green-50: #e6f8f3;
+    --green-80: #d7f6ee;
+    --green-100: #94e7d1;
+    --green-200: #71d2b8;
+    --green-300: #58caab;
+    --green-400: #33b893;
+    --green-500: #27ab86;
+    --green-600: #1c9674;
+    --green-700: #137b5e;
+    --green-800: #10634c;
+    --green-900: #0a4534;
+    --yellow-50: #fff8e1;
+    --yellow-80: #fff2c6;
+    --yellow-100: #ffe182;
+    --yellow-200: #ffd74e;
+    --yellow-300: #ffc929;
+    --yellow-400: #ffbf00;
+    --yellow-500: #ffad01;
+    --yellow-600: #ff9a00;
+    --yellow-700: #f78000;
+    --yellow-800: #db5600;
+    --yellow-900: #b94100;
+    --red-50: #fbf1ef;
+    --red-80: #ffd4cc;
+    --red-100: #ffaea1;
+    --red-200: #ff8d7c;
+    --red-300: #fe6a54;
+    --red-400: #fa5b4a;
+    --red-500: #ec4937;
+    --red-600: #dd3c2a;
+    --red-700: #c83323;
+    --red-800: #aa2a1b;
+    --red-900: #8d2115;
+    --elevation-z1: 0 2px 4px 0 rgba(33, 37, 41, 0.1);
+    --elevation-z2: 0 4px 8px 0 rgba(33, 37, 41, 0.1);
+    --elevation-z3: 0 8px 16px 0 rgba(33, 37, 41, 0.15);
+    --elevation-z4: 0 12px 24px 0 rgba(33, 37, 41, 0.15);
+    --elevation-z0-border: 0 0 0 1px var(--gray-100);
+    --elevation-z1-border: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 0 0 1px var(--gray-100);
+    --elevation-z2-border: 0 4px 8px 0 rgba(33, 37, 41, 0.1), 0 0 0 1px var(--gray-100);
+    --elevation-z3-border: 0 8px 16px 0 rgba(33, 37, 41, 0.15), 0 0 0 1px var(--gray-100);
+    --elevation-z4-border: 0 12px 24px 0 rgba(33, 37, 41, 0.15), 0 0 0 1px var(--gray-100);
+    --motion-easing-basic: cubic-bezier(0.4, 0, 0.2, 1);
+    --motion-easing-linear-out: cubic-bezier(0, 0, 0.2, 1);
+    --motion-easing-linear-in: cubic-bezier(0.4, 0, 1, 1);
+    --z-toast: 60000;
+    --z-screen-loading: 50000;
+    --z-alert: 40000;
+    --z-alert-above-screen-loading: 51000;
+    --z-popup: 30000;
+    --z-dialog: 20000;
+    --z-bottomsheet: 10000;
+    --z-bottomsheet-above-dialog: 21000;
+}
+
+html {
+    font-size: 16px;
+}
+
+html {
+    /* 스크롤 이동시 부드럽게 */
+    scroll-behavior: smooth;
+}
+
+
+
+/* 전체를 묶는 div id="__next" */
+#__next {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* 메인페이지 */
+@media (min-width: 768px) .main {
+    max-width: 100%;
+}
+
+.main {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    width: 100%;
+    max-width: 1060px;
+    margin: 0 auto 120px;
+}
+
+main {
+    display: block;
+}
+
+.entire {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    color: #141719;
+}
+
+/* 처음부터 편의 시설, 숙소 위치 위까지 */
+@media (min-width: 768px) .upper {
+    max-width: 1140px;
+}
+
+.upper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+    padding: 0 40px;
+}
+
+
+
+
+
+button,
+a {
+    outline: none;
+    color: inherit;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btnTitle {
+    padding: 0px 4px;
+    padding-bottom: 10px;
+}
+
+
+
+/* 메인 사진 섹션 */
+.main_pic {
+    position: relative;
+}
+
+.main_pic2 {
+    position: relative;
+    width: 100%;
+    height: 420px;
+}
+
+.pic_grid {
+    display: grid;
+    grid-template-rows: repeat(2, 50%);
+    grid-auto-columns: minmax(52%, 100%) minmax(23.4%, 1fr) minmax(23.4%, 1fr);
+    grid-auto-flow: column;
+    gap: 2px 2px;
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+.pic_grid>img:first-of-type {
+    grid-row: 1/-1;
+}
+
+.grid_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    background-color: #f5f6f7;
+    cursor: pointer;
+}
+
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+.moreBtn {
+    /* 사진 더보기 버튼 */
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 99px;
+    border: 0;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    color: #495056;
+    border: 1px solid transparent;
+    height: 40px;
+    padding: 0px 12px;
+    width: auto;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background-color: #FFFFFF;
+    color: #141719;
+    height: 40px;
+    padding: 9px 12px;
+}
+
+.moreBtnSpan {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 124%;
+    letter-spacing: -0.02em;
+    white-space: pre-wrap;
+}
+
+.btnSpan2 {
+    /* 사진 모두 보기 */
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 138%;
+    letter-spacing: -0.02em;
+    white-space: pre-wrap;
+}
+
+/* 사진 아래 호텔 이름/가격 */
+.main_info {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 40px;
+    padding: 0 8px;
+}
+
+.main_info_left {
+    /* 호텔 이름, 가격 적힌 부분 */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    width: inherit;
+    max-width: inherit;
+    min-height: 165px;
+    padding: 6px 0;
+}
+
+.hotelNameArea {
+    margin-bottom: 24px;
+}
+
+@media (min-width: 768px) .hotelName {
+    gap: 8px;
+}
+
+.hotelName {
+    /* 호텔 이름 */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+}
+
+.content {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.hotelNameSpan {
+    white-space: pre-line;
+}
+
+.hotelNameSpan2 {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 124%;
+    letter-spacing: -0.01em;
+    white-space: pre-wrap;
+    color: #141719;
+}
+
+.hotelRates {
+    /* 4성급 부분 */
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 138%;
+    letter-spacing: -0.02em;
+    white-space: pre-wrap;
+    color: #848c94;
+}
+
+
+.hotelPriceArea {
+    /* 가격 부분 */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    gap: 2px;
+    width: 100%;
+}
+
+.hotelPriceArea2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 40px;
+}
+
+.hotelBold {
+    /* 룸 이름 */
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 124%;
+    letter-spacing: -0.01em;
+    white-space: pre-wrap;
+}
+
+.main_info_right {
+    /* 객실 선택 버튼 부분 */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 8px;
+}
+
+.submitBtn {
+    /* 객실 선택 버튼 */
+    position: relative;
+    display: flex;
+    border-radius: 99px;
+    border: 0;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #141719;
+    color: #FFFFFF;
+    height: 48px;
+    padding: 0px 16px;
+    width: auto;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 124%;
+    letter-spacing: -0.01em;
+    padding: 14px 40px;
+    height: 56px;
+    margin-top: 20px;
+}
+
+.BtnSpan {
+    position: relative;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 200%;
+
+
+
+}
+
+.btnSpan3 {
+    /* 객실 선택 */
+    position: relative;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+
+
+}
+
+
+/* 편의 시설, 숙소 위치부터 끝까지 */
+.lower {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 100px;
+    width: 100%;
+    margin-top: 50px;
+}
+
+/* 편의시설부터 객실 선택 위까지 */
+.lower-1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 100px;
+    width: 100%;
+    max-width: 1140px;
+    padding: 0 40px;
+}
+
+.lower-1-upper {
+    /* 편의 시설, 숙소 위치 */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    padding: 0;
+}
+
+.convenienceArea {
+    /* 편의 시설 */
+    width: 100%;
+    padding: 0 8px;
+}
+
+.info {
+    /* 편의시설, 숙소위치 내용 */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) .info>*:not(:last-of-type) {
+    margin-bottom: 24px;
+}
+
+.info>*:not(:last-of-type) {
+    margin-bottom: 16px;
+}
+
+.infoTitle {
+    /* 편의시설, 숙소 위치, 객실 선택 span */
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 124%;
+    letter-spacing: -0.01em;
+    white-space: pre-wrap;
+}
+
+/* 편의시설 내용 */
+
+.convenience_container {
+    display: grid;
+    grid-template-rows: repeat(4, 38px);
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+    -webkit-column-gap: 16px;
+    column-gap: 16px;
+}
+
+/*
+.convenience_container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}*/
+
+
+.convenience {
+    /* 편의시설 각 항목들 */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 38px;
+}
+
+.convenience>*:not(:last-of-type) {
+    margin-right: 12px;
+}
+
+.content {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.iconImg {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 20px;
+    height: 20px;
+}
+
+@media (min-width: 768px) .detailSpan {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+
+
+/* 숙소 정보 섹션 */
+.lower-1-lower {
+    /* 숙소 정보부터 객실 선택 위까지*/
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: row;
+    gap: 80px 40px;
+    width: 100%;
+}
+
+.lower-1-lower>div:first-of-type {
+    grid-column: 1/-1;
+}
+
+.infoSection {
+    /* 숙소 정보, 숙소 정책, 보건&안전 섹션 */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    padding: 0 8px;
+}
+
+.infoSectionTitle {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+}
+
+.infoSectionTitleSpan {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 124%;
+    letter-spacing: -0.01em;
+    white-space: pre-wrap;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.infoContent {
+    /* 내용 */
+    position: relative;
+    max-height: 320px;
+    overflow: hidden;
+}
+
+.everyContent {
+    /* 더보기로 잘려서 안 보이는 부분 */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 24px;
+    height: 100%;
+    padding: 0px;
+}
+
+.contentBox>*:not(:last-of-type) {
+    margin-bottom: 12px;
+}
+
+.contentTitle {
+    /* 소제목 */
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 124%;
+    letter-spacing: -0.02em;
+    white-space: pre-wrap;
+    color: #141719;
+}
+
+.contentContent {
+    /* 내용 */
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 138%;
+    letter-spacing: -0.01em;
+    white-space: pre-wrap;
+    color: #495056;
+}
+
+.gradation {
+    /* 더보기 버튼 위 그라데이션 처리 */
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    display: block;
+    width: 100%;
+    height: 72px;
+    background: linear-gradient(rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.8) 38.02%, rgba(255, 255, 255, 0) 100%);
+    transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+.moreContentBtn {
+    /* 더보기 버튼 */
+    position: relative;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 99px;
+    border: 0px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: rgb(241, 243, 245);
+    color: rgb(20, 23, 25);
+    width: auto;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 138%;
+    letter-spacing: -0.02em;
+    height: 40px;
+    padding: 9px 16px;
+}
+
+.policyBox {
+    position: relative;
+    max-height: 240px;
+    overflow: hidden;
+}
+
+
+/* 객실 선택 섹션 */
+.lower-2 {
+    position: relative;
+    left: 0;
+    display: flex;
+    background-color: #f1f3f5;
+    width: 100%;
+    padding: 60px 40px;
+}
+
+.lower-2-Container {
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1060px;
+}
+
+.lower-2-Container>*:not(:last-of-type) {
+    margin-bottom: 40px;
+}
+
+.lower-2-upper {
+    /* 객실 선택 맨 윗 부분 */
+
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    height: 56px;
+    padding-left: 8px;
+}
+
+
+
+.room_entire {
+    /* 전체 객실 */
+
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+}
+
+.room_entire>*:not(:last-of-type) {
+    margin-bottom: 80px;
+
+}
+
+.each_room {
+    /* 각각의 룸 */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border-radius: 34px;
+    padding: 40px 40px 0 40px;
+
+}
+
+.room_content {
+    /* 사진 + 가격 */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    margin-bottom: 4px;
+}
+
+.room_content_left {
+    /* 왼쪽(사진  + 사진 아래 설명 + 더보기) */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    min-width: 500px;
+}
+
+.left_entire {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 16px;
+    overflow: hidden;
+}
+
+.room_pic {
+    /* 객실 사진 */
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 210px;
+    height: 158px;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.room_img {
+    /* 객실 사진 img 태그 */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.room_condition {
+    /* 사진 아래 룸 컨디션 설명 */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    overflow: hidden;
+    padding: 0 4px;
+}
+
+.room_condition_span {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 138%;
+    letter-spacing: -0.02em;
+    white-space: pre-wrap;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.more_condition {
+    /* 객실 정보 더보기 버튼 */
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 99px;
+    border: 0;
+    overflow: hidden;
+    cursor: pointer;
+    color: #141719;
+    background-color: transparent;
+    -webkit-text-decoration: underline;
+    text-decoration: underline;
+    border-radius: 8px;
+    height: 33px;
+    padding: 0px 8px;
+    height: 18px;
+    padding: 0;
+    border-radius: 0;
+}
+
+.more_condition>div {
+    padding: 0;
+}
+
+.more_condition_2 {
+    padding: 0px;
+}
+
+.more_condition_3 {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 138%;
+    letter-spacing: -0.01em;
+    white-space: pre-wrap;
+}
+
+.more_condition_span {
+    /* 객실 정보 더보기 span */
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 138%;
+    letter-spacing: -0.02em;
+    white-space: pre-wrap;
+}
+
+.room_content_right {
+    /* 오른쪽(가격 + 예약하기) */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 58px;
+}
+
+
+
+.reserve_area {
+    min-height: 64px;
+    padding: 0;
+    border-top: none;
+}
+
+.reserve_area {
+    /* 오른쪽(가격 + 예약하기) */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    padding: 24px 20px;
+    border-top: 0.5px solid #e9ecef;
+}
+
+
+
+.reserve_area>*:not(:last-of-type) {
+    margin-right: 48px;
+}
+
+
+.free_cancel_box {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+.free_cancel_box {
+    /* 중앙 무료취소 부분 */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    overflow: hidden;
+}
+
+.free_cancel {
+    /* 하늘색 배경 무료취소 표시 */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    min-height: 22px;
+}
+
+element.style {
+    background-color: #E7F4FD;
+}
+
+
+.free_cancel_entire_span {
+    border-radius: 6px;
+}
+
+.free_cancel_entire_span {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 22px;
+    padding: 0 6px;
+    border-radius: 8px;
+}
+
+element.style {
+    font-weight: 600;
+    font-size: 13px;
+    color: #1583DB;
+}
+
+.free_cancel_entire_span>*:not(:last-of-type) {
+    margin-right: 4px;
+}
+
+.free_cancel_span {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 138%;
+    letter-spacing: -0.02em;
+}
+
+
+.perksList {
+    padding: 0 4px;
+    gap: 3px;
+}
+
+.perksList {
+    /* 무료취소 아래 */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+ol,
+ul,
+li {
+    list-style: none;
+}
+
+ul,
+ol,
+dl {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.perk {
+    /* 무료취소 아래 각 라인 */
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    list-style: none;
+    height: 18px;
+}
+
+
+.perk_content {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 138%;
+    letter-spacing: -0.02em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.reserve_right {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.reserve_right {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+}
+
+
+.reserve_right>*:not(:last-of-type) {
+    margin-bottom: 0;
+    margin-right: 54px;
+}
+
+
+.price_box {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.price_box {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+}
+
+.price_box>*:not(:last-of-type) {
+    margin-bottom: 4px;
+}
+
+.price {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+
+
+.price_span {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 124%;
+    letter-spacing: -0.01em;
+}
+
+.price_span {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 124%;
+    letter-spacing: -0.01em;
+    color: #141719;
+    text-align: right;
+}
+
+
+.room_reserve_btn_area {
+    /* 예약하기 버튼 */
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+
+.room_reserve_btn {
+    height: 40px;
+    padding: 9px 16px;
+}
+
+.room_reserve_btn {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 99px;
+    border: 0;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #141719;
+    color: #FFFFFF;
+    height: 48px;
+    padding: 0px 16px;
+    width: auto;
+    font-size: 15px;
+    font-weight: 600;
+    height: 48px;
+    border-radius: 24px;
+    padding-top: 10px;
+}

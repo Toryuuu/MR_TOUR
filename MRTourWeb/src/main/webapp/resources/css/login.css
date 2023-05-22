@@ -1,0 +1,188 @@
+@charset "UTF-8";
+
+/* 전체 적용 css */
+
+* {
+    box-sizing: border-box;
+}
+
+div {
+    display: block;
+}
+body {
+    -webkit-text-size-adjust: none;
+    word-break: break-all;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: #666;
+    background: #fff;
+}
+
+html {
+    position: relative;
+    height: auto!important;
+    display: block;
+    min-width: 320px;
+    max-width: 768px;
+    margin: 0 auto;
+    background: #f4f5f9;
+}
+
+
+/* 개별 적용 css */
+
+#container {
+    min-height: 100vh;
+}
+
+.login_form {
+    padding: 5.2rem 0 2rem;
+}
+
+.logo {
+    text-align: center;
+}
+
+
+.logo_wrap .mr_logo {
+    width: 200px;
+    height: 3.7rem;
+	display: inline-block;
+    font-size: 0;
+    text-indent: -999rem;
+    vertical-align: middle;
+}
+
+.mr_logo img {
+	width : 180px;
+	height : Auto;
+}
+
+.login_input {
+    padding: 0 2.6rem!important;
+}
+
+.input_duo {
+    margin-top: 2.8rem;
+    position: relative;
+    padding-bottom : 10px;
+}
+.input_text {
+    position: relative;
+    display: block;
+    background: transparent;
+}
+
+.input_duo .input_text input {
+    overflow: hidden;
+}
+
+.input_duo .input_text input #input_id {
+    border-radius: 0.8rem 0.8rem 0 0;
+    border-bottom: none!important;
+}
+
+.input_text input+label {
+    position: absolute;
+    left: 1.6rem;
+    top: 1.4rem;
+    color: #666;
+    transition: font-size 1s; 
+}
+
+input[type="password" i] {
+    -webkit-text-security: disc !important;
+}
+.login_btn, .signup_btn {
+    justify-content: center;
+    position: relative;
+}
+
+.login_btn {
+	padding-bottom : 5px;
+}
+
+.btn {
+    align-items: center;
+    background: rgb(199,238,255);
+    border: 1px solid;
+    border-color: rgb(199,238,255);
+    border-radius: 2.5rem;
+    color: rgb(100, 100, 100);
+    cursor: pointer;
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: 600;
+    justify-content: center;
+    letter-spacing: -.06rem;
+    margin: 0;
+    padding: 0;
+    width : 380px;
+    height: 55px;
+    transition: none;
+    text-transform: none;
+}
+
+.btn:hover {
+	background : rgb(0,157,255);
+	color : white;
+}
+
+a, button {
+    outline: none;
+}
+button, input, select, textarea {
+    vertical-align: middle;
+}
+
+input {
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+}
+
+.input_text input {
+    appearance: none;
+    width: 100%;
+    min-height: 4.8rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 1.6rem 4.2rem 0 1.6rem;
+    transition: all .1s ease;
+    color: #111;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: -.096rem;
+}
+
+.input_duo .input_text input {
+    border-radius: 0.8rem 0.8rem 0 0;
+    border-bottom: none!important;
+    overflow: hidden;
+}
+
+.input_duo .input_text+.input_text input {
+    border-bottom: 1px solid #ddd!important;
+    border-radius: 0 0 0.8rem 0.8rem;
+}
+
+button {
+    appearance: auto;
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    word-spacing: normal;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: center;
+    position: absolute;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+}

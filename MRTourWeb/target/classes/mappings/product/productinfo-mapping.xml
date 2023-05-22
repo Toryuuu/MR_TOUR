@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ProductInfoDAO">
+
+<!-- 쿼리 실행 후 결과 담아줄 resultMap -->
+	<resultMap id="productinfo" type="productinfo">
+		<result property="prd_id" column="PRD_ID" />
+		<result property="prd_name" column="PRD_NAME" />
+		<result property="city_no" column="CITY_NO" />
+		<result property="prd_opt" column="PRD_OPT" />		
+		<result property="cate_id" column="CATE_ID" />
+		<result property="prd_price" column="PRD_PRICE" />
+		<result property="prd_img" column="PRD_IMG" />
+		<result property="prd_exp" column="PRD_EXP" />		
+			
+	</resultMap>
+
+<!-- 상품 코드 중복 확인  -->
+	<select id="prdCheckID" resultType="java.lang.Integer">
+		SELECT COUNT(*) FROM
+		PRODUCT_INFO
+		WHERE PRD_ID=#{prd_id}
+	</select>
+	
+<!-- 티켓 상품 검색 결과 -->
+	<select id="listSearchPrd" resultMap="productinfo">
+		<choose>
+			<when test="city_no != '전체'">
+			 SELECT * FROM
+			(SELECT ROWNUM AS RN, A.* FROM 
+			(SELECT * FROM 
+			(SELECT * FROM PRODUCT_INFO WHERE CITY_NO = #{city_no} AND CATE_ID = 'T003'
+		) ORDER BY CITY_NO DESC, PRD_ID DESC) A ) WHERE RN BETWEEN #{start} AND #{end}
+			</when>
+			<when test="city_no == '전체'">
+			SELECT * FROM
+			(SELECT ROWNUM AS RN, A.* FROM 
+			(SELECT * FROM 
+			(SELECT * FROM PRODUCT_INFO WHERE CATE_ID = 'T003'
+			) ORDER BY CITY_NO DESC, PRD_ID DESC) A ) WHERE RN BETWEEN #{start} AND #{end}
+			</when>
+		</choose>
+	</select>
+	
+<!-- 자동차 검색 결과 -->
+	<select id="listSearchCar" resultMap="productinfo">
+	
+		<choose>
+			<when test="city_no == '전체' and prd_opt != '전체'" >
+			SELECT * 
+				FROM (SELECT ROWNUM AS RN, A.* 
+					FROM (SELECT * 
+						FROM (SELECT * FROM PRODUCT_INFO WHERE PRD_OPT LIKE '%'||#{prd_opt}||'%' AND CATE_ID = 'C001') ORDER BY CITY_NO DESC, PRD_ID DESC) A )
+						 WHERE RN BETWEEN #{start} AND #{end}
+			</when>
+			<when test="city_no != '전체' and prd_opt == '전체'" >
+			SELECT * FROM
+			(SELECT ROWNUM AS RN, A.* FROM 
+			(SELECT * FROM 
+			(SELECT * FROM PRODUCT_INFO WHERE CITY_NO = #{city_no} AND CATE_ID = 'C001'
+		) ORDER BY CITY_NO DESC, PRD_ID DESC) A ) WHERE RN BETWEEN #{start} AND #{end}
+			</when>
+			<when test="city_no != '전체' and prd_opt != '전체'" >
+			SELECT * FROM
+			(SELECT ROWNUM AS RN, A.* FROM 
+			(SELECT * FROM 
+			(SELECT * FROM PRODUCT_INFO WHERE CITY_NO = #{city_no} AND PRD_OPT LIKE '%'||#{prd_opt}||'%' AND CATE_ID = 'C001'
+		) ORDER BY CITY_NO DESC, PRD_ID DESC) A ) WHERE RN BETWEEN #{start} AND #{end}
+			</when>
+			<otherwise>
+			SELECT * FROM
+			(SELECT ROWNUM AS RN, A.* FROM 
+			(SELECT * FROM 
+			(SELECT * FROM PRODUCT_INFO WHERE CATE_ID = 'C001'
+		) ORDER BY CITY_NO DESC, PRD_ID DESC) A ) WHERE RN BETWEEN #{start} AND #{end}
+			</otherwise>
+		</choose>
+	</select>
+	
+	<!-- 호텔 검색 결과 -->
+	<select id="listSearchHotel" resultMap="productinfo">
+		<choose>
+			<when test="city_no == '전체' and prd_opt != '전체'" >
+			SELECT * 
+				FROM (SELECT ROWNUM AS RN, A.* 
+					FROM (SELECT * 
+						FROM (SELECT * FROM PRODUCT_INFO WHERE PRD_OPT LIKE '%'||#{prd_opt}||'%' AND CATE_ID = 'H002') ORDER BY CITY_NO DESC, PRD_ID DESC) A )
+						 WHERE RN BETWEEN #{start} AND #{end}
+			</when>
+			<when test="city_no != '전체' and prd_opt == '전체'" >
+			SELECT * FROM
+			(SELECT ROWNUM AS RN, A.* FROM 
+			(SELECT * FROM 
+			(SELECT * FROM PRODUCT_INFO WHERE CITY_NO = #{city_no} AND CATE_ID = 'H002'
+		) ORDER BY CITY_NO DESC, PRD_ID DESC) A ) WHERE RN BETWEEN #{start} AND #{end}
+			</when>
+			<when test="city_no != '전체' and prd_opt != '전체'" >
+			SELECT * FROM
+			(SELECT ROWNUM AS RN, A.* FROM 
+			(SELECT * FROM 
+			(SELECT * FROM PRODUCT_INFO WHERE CITY_NO = #{city_no} AND PRD_OPT LIKE '%'||#{prd_opt}||'%' AND CATE_ID = 'H002'
+		) ORDER BY CITY_NO DESC, PRD_ID DESC) A ) WHERE RN BETWEEN #{start} AND #{end}
+			</when>
+			<otherwise>
+			SELECT * FROM
+			(SELECT ROWNUM AS RN, A.* FROM 
+			(SELECT * FROM 
+			(SELECT * FROM PRODUCT_INFO WHERE CATE_ID = 'H002'
+		) ORDER BY CITY_NO DESC, PRD_ID DESC) A ) WHERE RN BETWEEN #{start} AND #{end}
+			</otherwise>
+		</choose>
+	</select>
+		
+	<!-- 검색한 티켓 상품 개수 -->
+	<select id="countSearchPrd" resultType="java.lang.Integer">
+		<choose>
+			<when test="city_no == '전체'">
+				SELECT COUNT(*) FROM PRODUCT_INFO WHERE CATE_ID = 'T003'
+			</when>
+			<when test="city_no != '전체'">
+				SELECT COUNT(*) FROM PRODUCT_INFO WHERE 
+				CITY_NO = #{city_no} AND CATE_ID = 'T003'
+			</when>
+		</choose>
+	</select>
+	
+	<!-- 검색한 상품 개수 -->
+	<select id="countSearchCar" resultType="java.lang.Integer">
+		<choose>
+			<when test="city_no == '전체' and prd_opt != '전체'" >
+				SELECT COUNT(*) FROM PRODUCT_INFO WHERE 
+				PRD_OPT LIKE '%'||#{prd_opt}||'%' AND CATE_ID = 'C001'
+			</when>
+			<when test="city_no != '전체' and prd_opt == '전체'" >
+				SELECT COUNT(*) FROM PRODUCT_INFO WHERE 
+				CITY_NO = #{city_no} AND CATE_ID = 'C001'
+				
+			</when>
+			<when test="city_no != '전체' and prd_opt != '전체'" >
+				SELECT COUNT(*) FROM PRODUCT_INFO WHERE CITY_NO = #{city_no} AND PRD_OPT LIKE '%'||#{prd_opt}||'%' AND CATE_ID = 'C001'
+			</when>
+			<otherwise>
+				SELECT COUNT(*) 
+				FROM PRODUCT_INFO WHERE CATE_ID = 'C001'
+			</otherwise>
+		</choose>
+		
+	</select>
+	
+		<!-- 검색한 상품 개수 -->
+	<select id="countSearchHotel" resultType="java.lang.Integer">
+		<choose>
+			<when test="city_no == '전체' and prd_opt != '전체'" >
+				SELECT COUNT(*) FROM PRODUCT_INFO WHERE 
+				PRD_OPT LIKE '%'||#{prd_opt}||'%' AND CATE_ID = 'H002'
+			</when>
+			<when test="city_no != '전체' and prd_opt == '전체'" >
+				SELECT COUNT(*) FROM PRODUCT_INFO WHERE 
+				CITY_NO = #{city_no} AND CATE_ID = 'H002'
+				
+			</when>
+			<when test="city_no != '전체' and prd_opt != '전체'" >
+				SELECT COUNT(*) FROM PRODUCT_INFO WHERE CITY_NO = #{city_no} AND PRD_OPT LIKE '%'||#{prd_opt}||'%' AND CATE_ID = 'H002'
+			</when>
+			<otherwise>
+				SELECT COUNT(*) 
+				FROM PRODUCT_INFO WHERE CATE_ID = 'H002'
+			</otherwise>
+		</choose>
+		
+	</select>
+
+<!-- 상품 등록 -->
+	<insert id="insertProduct">
+		<![CDATA[
+			INSERT INTO PRODUCT_INFO (
+				PRD_ID,
+				PRD_NAME,
+				CITY_NO,
+				PRD_OPT,
+				CATE_ID,
+				PRD_PRICE,
+				PRD_IMG,
+				PRD_EXP
+			) VALUES (
+				#{prd_id},
+				#{prd_name},
+				#{city_no},
+				#{prd_opt},
+				#{cate_id},
+				#{prd_price},
+				#{prd_img},
+				#{prd_exp}
+			)
+		]]>
+	</insert>
+
+<!-- 품목 상세보기 -->
+	<select id="productDetail" resultMap="productinfo">
+		<![CDATA[
+			SELECT * FROM PRODUCT_INFO WHERE PRD_ID=#{prd_id}
+		]]>
+	</select>
+
+<!-- 상품 리스트 불러오기 -->
+	<select id="getProductList" resultMap="productinfo">
+		<![CDATA[
+			SELECT * FROM (
+				SELECT ROWNUM AS RN, A.* FROM (
+					SELECT * FROM PRODUCT_INFO WHERE CATE_ID=#{product.cate_id} ORDER BY PRD_ID DESC
+				) A
+			) WHERE RN BETWEEN #{start} AND #{end}
+		]]>
+	</select>
+	
+	<!-- 관리자 페이지에서 상품 리스트 불러오기 -->
+	<select id="getAdminProductList" resultMap="productinfo">
+		<![CDATA[
+			SELECT CATE_ID, nvl(prd_img, 'resource/img/product/') AS PRD_IMG, PRD_NAME, PRD_ID, PRD_PRICE, PRD_OPT, CITY_NO, PRD_EXP FROM (
+				SELECT ROWNUM AS RN, A.* FROM (
+					SELECT * FROM PRODUCT_INFO ORDER BY PRD_ID DESC
+				) A
+			) WHERE RN BETWEEN #{start} AND #{end}
+		]]>
+	</select>
+	
+	<!-- 카테고리별 상품 개수 -->
+	<select id="getCountProduct" resultType="java.lang.Integer">
+		<![CDATA[
+			SELECT COUNT(*) FROM PRODUCT_INFO WHERE CATE_ID=#{cate_id}
+		]]>
+	</select>
+	
+	<!-- 관리자 페이지 상품 개수 -->
+	<select id="getAdminCountProduct" resultType="java.lang.Integer">
+		<![CDATA[
+			SELECT COUNT(*) FROM PRODUCT_INFO
+		]]>
+	</select>
+</mapper>

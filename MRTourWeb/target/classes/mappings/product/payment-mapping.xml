@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="PaymentDAO">
+	<resultMap id="payment" type="payment">
+		<result property="order_no" column="ORDER_NO" />
+		<result property="member_id" column="MEMBER_ID" />
+		<result property="prd_id" column="PRD_ID" />
+		<result property="buy_quantity" column="BUY_QUANTITY" />
+		<result property="member_zipcode" column="MEMBER_ZIPCODE" />
+		<result property="member_faddr" column="MEMBER_FADDR" />
+		<result property="member_laddr" column="MEMBER_LADDR" />
+		<result property="member_phone" column="MEMBER_PHONE" />
+		<result property="credit_number" column="CREDIT_NUMBER" />
+		<result property="payment_date" column="PAYMENT_DATE" />
+		<result property="prd_name" column="PRD_NAME" />
+		<result property="prd_price" column="PRD_PRICE" />
+		<result property="prd_sum" column="PRD_SUM" />
+		<result property="cate_id" column="CATE_ID" />
+		<result property="prd_img" column="PRD_IMG" />
+		
+	</resultMap>
+	
+	<insert id="insertPayment">
+		<![CDATA[
+			INSERT INTO PAYMENT
+			(ORDER_NO, MEMBER_ID, PRD_ID, BUY_QUANTITY, MEMBER_ZIPCODE, MEMBER_FADDR, MEMBER_LADDR, MEMBER_PHONE, CREDIT_NUMBER)
+			VALUES
+			(ORDER_NO.NEXTVAL, #{member_id}, #{prd_id}, #{buy_quantity}, #{member_zipcode}, #{member_faddr}, #{member_laddr}, #{member_phone}, #{credit_number})
+		]]>
+	</insert>
+	
+	<insert id="CarPayment">
+		<![CDATA[
+			INSERT INTO PAYMENT
+			(ORDER_NO, MEMBER_ID, PRD_ID, BUY_QUANTITY, MEMBER_PHONE, CREDIT_NUMBER)
+			VALUES
+			(ORDER_NO.NEXTVAL, #{member_id}, #{prd_id}, #{buy_quantity}, #{member_phone}, #{credit_number})
+		]]>
+	</insert>
+
+	<insert id="HotelPayment">
+		<![CDATA[
+			INSERT INTO PAYMENT
+			(ORDER_NO, MEMBER_ID, PRD_ID, BUY_QUANTITY, MEMBER_PHONE, CREDIT_NUMBER, BUY_QUANTITY)
+			VALUES
+			(ORDER_NO.NEXTVAL, #{member_id}, #{prd_id}, #{buy_quantity}, #{member_phone}, #{credit_number}, #{buy_quantity})
+		]]>
+	</insert>
+			
+	<delete id="deleteCartPayment">
+		<![CDATA[
+			DELETE CART WHERE MEMBER_ID=#{member_id} AND PRD_ID=#{prd_id}
+		]]>
+	</delete>
+	
+	<select id="paymentProduct" resultMap="payment">
+		<![CDATA[
+			SELECT *
+			FROM PRODUCT_INFO NATURAL JOIN MEMBER
+			WHERE PRD_ID=#{payment.prd_id} AND MEMBER_ID=#{payment.member_id}
+		]]>
+	</select>
+	
+	<select id="cartPaymentProduct" resultMap="payment">
+		<![CDATA[
+			SELECT * 
+			FROM CART NATURAL JOIN PRODUCT_INFO 
+			WHERE MEMBER_ID=#{payment.member_id}
+		]]>
+	</select>
+</mapper>

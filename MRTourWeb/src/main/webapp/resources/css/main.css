@@ -1,0 +1,418 @@
+@charset "UTF-8";
+
+
+html, body {
+   background-color: #ffffff;
+   font-size: 10px;
+   color: #333;
+   min-height: 100%;
+   min-width: 100%;
+}
+
+input {
+   font-size: 18px;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+/* //기본 설정 */
+#wrapper {
+    min-height: 100%;
+    position: relative;
+}
+/* section1 */
+#section1 {
+   text-align: center;
+   margin-top: 80px;
+}
+
+.swiper {
+   width: 100%;
+   height: 600px;
+}
+
+.swiper-slide {
+   font-size: 18px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.swiper-slide img {
+   display: block;
+   width: 100%;
+   height: 600px;
+   object-fit: cover;
+}
+
+/* //section1 */
+
+
+
+
+/* section2 */
+#section2 {
+   position: relative;
+   width: 100%;
+   height: 650px;
+   text-align: center;
+}
+
+#section2 .tc2 {
+   position: relative;
+   text-align: center;
+   width: 100%;
+   font-size: 40px;
+   font-family: 'Nanum Gothic', sans-serif;
+   padding-top : 100px;
+   padding-bottom: 50px;
+}
+
+#section2 .box {
+   position: relative;
+   margin-left: 100px;
+   margin-right: 60px;
+   width: 300px;
+   height: 300px;
+   float: left;
+   background: white;
+   border: none;
+   box-shadow: 6px 4px 6px rgb(204, 202, 202);
+}
+
+#section2 .box>.image_box {
+   width: 100%;
+   height: 200px;
+   overflow: hidden;
+}
+
+#section2 .box>.image_box>img {
+   width: 100%;
+   height: 100%;
+   cursor: pointer;
+}
+
+#section2 .box>.des {
+   padding-top: 20px;
+   font-size: 14px;
+   color: #333;
+}
+
+/* //section2 */
+
+/* section3 */
+#section3 {
+   width: 100%;
+   height: 800px;
+   position: relative;
+   margin-top: 200px;
+}
+
+#section3 .c1 {
+   position: relative;
+   width: 100%;
+   float: left;
+}
+
+#section3 .background_img img{
+position: relative;
+padding-left: 180px;
+   
+
+}
+
+#section3 .content {
+   display: flex;
+   flex-direction: column;
+}
+
+#section3 .c_1text {
+   position: absolute;
+   padding-left: 230px;
+   width: 500px;
+   top: 10%;
+   font-size: 40px;
+   font-family: 'Nanum Gothic', sans-serif;
+   text-align: center;
+   color: #000000;
+   text-shadow: 6px 2px 2px rgb(168, 167, 167);
+}
+
+#section3 .c2 {
+   position: absolute;
+   top: 250px;
+   left: 220px;
+   font-size: 20px;
+   font-family: 'Nanum Gothic', sans-serif;
+   line-height: 40px;
+   text-align: center;
+   background-color: #fff;
+   width: 300px;
+   height: 40px;
+   border: 5px solid #fff;
+   border-radius: 70px;
+   margin: 15px;
+}
+
+#section3 .c3 {
+   position: absolute;
+   top: 330px;
+   left: 220px;
+   font-size: 20px;
+   font-family: 'Nanum Gothic', sans-serif;
+   line-height: 40px;
+   text-align: center;
+   background-color: #fff;
+   width: 300px;
+   height: 40px;
+   border: 5px solid #fff;
+   border-radius: 80px;
+   margin: 15px;
+}
+
+#section3 .c4 {
+   position: absolute;
+   top: 412px;
+   left: 220px;
+   font-size: 20px;
+   font-family: 'Nanum Gothic', sans-serif;
+   line-height: 40px;
+   text-align: center;
+   background-color: #fff;
+   width: 300px;
+   height: 40px;
+   border: 5px solid #fff;
+   border-radius: 80px;
+   margin: 15px;
+}
+
+#section3 .c5{
+   position: relative;
+   top: 50%;
+}
+#section3 .c5 .box1 {
+   box-shadow: 5px 5px 3px #d6d5d5;
+   position: relative;
+   top: -520px;
+   left: 500px;
+   width: 350px;
+   height: 370px;
+   float: left;
+   background: white;
+   border: none;
+   margin-left: 60px;
+}
+
+#section3 .box1>.image_box1 {
+   width: 350px;
+   height: 370px;
+   overflow: hidden;
+}
+
+#section3 .box1>.image_box1>img1 {
+   width: 350px;
+   height: 370px;
+   cursor: pointer;
+}
+
+#section3 .box1>.des1 {
+   text-align: center;
+   padding-top: 10px;
+   font-size: 15px;
+   color: #333;
+   background-color: #fff;
+   box-shadow: 6px 5px 3px #d6d5d5;
+}
+
+/* //section3 */
+
+/* section4 */
+#section4 {
+   background-color: #e2f2fa;
+   width: 100%;
+   height: 1000px;
+}
+
+#section4 .sc4t {
+   font-family: 'Nanum Gothic', sans-serif;
+   position: absolute;
+   text-align: center;
+   font-size: 45px;
+   margin-left: 800px;
+   margin-top: 50px;
+   color: #000000;
+   text-shadow: 5px 5px #bcdafd;
+}
+
+#section4 .swiper {
+   position: absolute;
+   width: 1900px;
+   height: 800px;
+   margin-top: 200px;
+   background-color: #e2f2fa;
+}
+
+#section4 .swiper-slide {
+   font-size: 18px;
+   background: #fff;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: #e2f2fa;
+}
+
+#section4 .swiper-slide img {
+   display: block;
+   position: absolute;
+   margin-bottom: 100px;
+   margin-right: 700px;
+   width: 700px;
+   height: 600px;
+   object-fit: cover;
+   background-color: #d3effc;
+}
+
+#section4 .text1 {
+   position: absolute;
+   font-family: 'Nanum Gothic', sans-serif;
+   font-size: 19px;
+   color: #000000;
+   text-shadow: 5px 5px #ffe9ff;
+   margin-left: 1106px;
+   margin-top: -360px;
+}
+
+#section4 .text2 {
+   position: absolute;
+   font-family: 'Nanum Gothic', sans-serif;
+   font-size: 19px;
+   color: #000000;
+   text-shadow: 5px 5px #ffe9ff;
+   margin-left: 390px;
+   margin-top: 80px;
+}
+
+#section4 .text3 {
+   position: absolute;
+   font-family: 'Nanum Gothic', sans-serif;
+   font-size: 50px;
+   color: #000000;
+   text-shadow: 5px 5px #ffe9ff;
+   margin-left: 420px;
+   margin-top: 250px;
+}
+
+#section4 .text4 {
+   position: absolute;
+   font-family: 'Nanum Gothic', sans-serif;
+   font-size: 50px;
+   color: #000000;
+   text-shadow: 5px 5px #bcdafd;
+   margin-left: 280px;
+   margin-top: -700px;
+}
+
+#section4 .text5 {
+   position: absolute;
+   font-family: 'Nanum Gothic', sans-serif;
+   font-size: 50px;
+   color: #000000;
+   text-shadow: 5px 5px #ffe9ff;
+   margin-left: 280px;
+   margin-top: -700px;
+}
+
+#section4 .text6 {
+   position: absolute;
+   font-family: 'Nanum Gothic', sans-serif;
+   font-size: 20px;
+   color: #000000;
+   text-shadow: 5px 5px #ffe9ff;
+   margin-left: 580px;
+   margin-top: -570px;
+}
+
+#section4 .text7 {
+   position: absolute;
+   font-family: 'Nanum Gothic', sans-serif;
+   font-size: 50px;
+   color: #000000;
+   text-shadow: 5px 5px #ffe9ff;
+   margin-left: 1150px;
+   margin-top: -220px;
+}
+
+#section4 .text9 {
+   position: absolute;
+   font-family: 'Nanum Gothic', sans-serif;
+   font-size: 20px;
+   color: #000000;
+   text-shadow: 5px 5px #bcdafd;
+   margin-left: 500px;
+   margin-top: -570px;
+}
+
+/* //section4 */
+
+/* section5 */
+
+#section5 {
+   position: relative;
+   height: 450px;
+   display : flex;
+   text-align: center;
+   padding-top:100px;
+   padding-left: 14%;
+}
+
+
+.sc55{
+   position: relative;
+   float: left;
+}
+.sc55 .value{
+   width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 48px;
+    color: #fff;
+    background-color: hsl(197, 97%, 59%);
+    font-size: 13px;
+    position: absolute;
+    top: 21px;
+    right: 33px;
+}
+.sc5 li{
+   position: relative;
+   float: left;
+   list-style-type: none;
+   padding-top: 5%;margin-left: 50px;
+   
+}
+.sc5 li img{
+   border: 1px solid #fff;
+   border-radius: 50%;
+   
+}
+
+
+.sc5 .item_title{
+   font-size: 17px;
+   padding-bottom: 10px;
+   padding-top: 10px;
+   font-family: 'Nanum Gothic', sans-serif;
+   
+}
+.sc5 a {
+   text-decoration-line: none;
+   color: #333;
+   font-size: 12px;
+   font-family: 'Nanum Gothic', sans-serif;
+   
+}
+
+/* //section5 */

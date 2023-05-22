@@ -1,0 +1,433 @@
+@charset "UTF-8";
+
+/*회원가입 입력폼 가로 : 330px*/
+
+
+/*상단 로고*/
+.logo {
+    text-align: center;
+}
+
+
+.logo_wrap .mr_logo {
+    width: 200px;
+    height: 3.7rem;
+	display: inline-block;
+    font-size: 0;
+    text-indent: -999rem;
+    vertical-align: middle;
+}
+
+.mr_logo img {
+	width : 180px;
+	height : Auto;
+	padding-bottom : 70px;
+}
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --gray-200: #dee2e6;
+    --gray-300: #ced4da;
+    --blue-light : rgb(210,241,255);;
+    --blue-bold: rgb(199,238,255);
+    --blue-hover: rgb(0,157,255);
+    --motion-easing-basic: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+*, ::before, ::after {
+    font-family: "SF Pro KR", "SF Pro Display", "SF Pro Icons", -apple-system, BlinkMacSystemFont, "Noto Sans KR", "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+    letter-spacing: 0px;
+    -webkit-font-smoothing: antialiased;
+    overflow-anchor: none;
+}
+
+html {
+    position: relative;
+    height: auto!important;
+    display: block;
+    min-width: 320px;
+    max-width: 768px;
+    margin: 0 auto;
+    background: #f4f5f9;
+}
+
+
+main {
+    display: block;
+    position: relative;
+    background-color : white;
+}
+
+.SignUpEmail-Container { /* 가입 폼 메인 전체*/
+    width: 600px;
+    padding: 48px;
+    margin: 64px auto;
+    border: 1px solid var(--gray-200);
+    border-radius: 2px;
+}
+
+.SignUpEmail-Form { /* 가입 폼(레이블+입력칸) 전체 */
+    position: relative;
+}
+
+.SignUpEmail-Section { /* 각 섹션 */
+    margin-bottom: 16px;
+}
+
+.FormTextInput-Container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+
+.FormTextInput-Label {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray-700);
+    letter-spacing: -0.2px;
+    margin-bottom: 8px;
+}
+
+label {
+    margin: 0;
+    font-weight: normal;
+}
+
+.FormTextInput-Input {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 40px;
+    padding: 11px;
+    border-radius: 4px;
+    border: 0px;
+    box-shadow: inset 0 0 0 1px var(--gray-300);
+    outline-style: none;
+    color: var(--gray-800);
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.2px;
+    width: 100%;
+}
+
+.FormTextInput-third {
+    -webkit-box-align: center;
+    align-items: center;
+    height: 40px;
+    padding: 11px;
+    border-radius: 4px;
+    border: 0px;
+    box-shadow: inset 0 0 0 1px var(--gray-300);
+    outline-style: none;
+    color: var(--gray-800);
+    font-weight: 500;
+    font-size: 14px;
+    width: 156px;
+    letter-spacing : 5px;
+    text-align : center;
+}
+
+.SignUpEmail-Section select {
+    -webkit-box-align: center;
+    align-items: center;
+    height: 39px;
+    padding: 11px;
+    border-radius: 4px;
+    border: 0px;
+    box-shadow: inset 0 0 0 1px var(--gray-300);
+    outline-style: none;
+    color: var(--gray-800);
+    font-weight: 400;
+    font-size: 12px;
+    width: 130px;
+}
+
+.SignUpEmail-Section .input {
+    -webkit-box-align: center;
+    align-items: center;
+    height: 40px;
+    padding: 11px;
+    border-radius: 4px;
+    border: 0px;
+    box-shadow: inset 0 0 0 1px var(--gray-300);
+    outline-style: none;
+    color: var(--gray-800);
+    font-weight: 500;
+    font-size: 14px;
+    width: 156px;
+}
+
+.sp_mail {
+	margin-left : 2px;
+	margin-right : 2px;
+}
+
+.AgreementList-Container { /* 약관 섹션*/
+    margin-top: 27px;
+    margin-bottom: 16px;
+}
+
+.AgreementList-TitleSection {
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+/*체크박스 구간*/
+
+p, span, strong, small {
+    color: inherit;
+}
+
+/*체크용 박스*/
+.AgreeLabel {
+    flex: 1 1 auto;
+    font-size: 14px;
+    line-height: 18px;
+    padding-left: 10px;
+}
+
+ul, ol, dl {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0;
+}
+
+li {
+    outline: none;
+}
+
+.FormTextInput-Label::after {
+    content: " *";
+}
+
+.AgreementList-List {
+    margin-top: 16px;
+    margin-bottom: 6px;
+    padding: 16px 8px 10px 16px;
+    border: 1px solid var(--gray-200);
+    border-radius: 4px;
+}
+
+.AgreementItem-Row {
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.AgreementItem-Item {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+}
+
+.Item-Checkbox {
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.AgreementItem-LabelBtn {
+    flex: 1 1 0%;
+    display: inline-block;
+    width: 100%;
+    min-height: 16px;
+    background: none;
+    border: none;
+    font-size: 14px;
+    text-align: left;
+    line-height: 16px;
+    cursor: pointer;
+}
+
+.AgreementItem-ArrowBox { /* 더보기 화살표 */
+    float: right;
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+}
+
+.ArrowBox {
+    display: inline-block;
+    border: 0px;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.Changeable {
+    margin-top: 4px;
+    margin-left: 28px;
+    color: var(--gray-500);
+    font-size: 12px;
+}
+
+p, dt, dd {
+    margin: 0px;
+    padding: 0px;
+}
+
+[role="button"] {
+    cursor: pointer;
+}
+
+.ButtonArea {
+    position: relative;
+    display: inline-flex;
+    width: 100%;
+}
+
+button[disabled], html input[disabled] {
+    cursor: default;
+}
+
+button[disabled], a[disabled] {
+    pointer-events: none !important;
+}
+
+button, a {
+    outline: none;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button, select {
+    text-transform: none;
+}
+
+button {
+    overflow: visible;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+
+.idchk {
+    text-align: center;
+    border: 0px;
+    border-radius: 4px;
+    letter-spacing: -0.2px;
+    user-select: none;
+    outline-style: none;
+    cursor: pointer;
+    height: 22px;
+    font-size: 12px;
+    color: black;
+    background-color: var(--blue-light);
+    width: 60px;
+}
+
+.idchk:hover {
+    background-color: var(--blue-hover);
+    color : white;
+}
+
+/*주소 css*/
+.FormTextInput-post {
+    -webkit-box-align: center;
+    align-items: center;
+    height: 40px;
+    border-radius: 4px;
+    border: 0px;
+    box-shadow: inset 0 0 0 1px var(--gray-300);
+    outline-style: none;
+    color: var(--gray-800);
+    font-weight: 500;
+    font-size: 14px;
+    width: 100px;
+    margin-bottom : 2px;
+    text-indent : 8px; 
+}
+
+.postchk {
+    text-align: center;
+    border: 0px;
+    border-radius: 4px;
+    letter-spacing: -0.2px;
+    user-select: none;
+    outline-style: none;
+    cursor: pointer;
+    height: 25px;
+    font-size: 12px;
+    color: black;
+    background-color: var(--blue-light);
+    width: 60px;	
+}
+.postchk:hover {
+    background-color: var(--blue-hover);
+    color : white;
+}
+
+.Button {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    text-align: center;
+    border: 0px;
+    border-radius: 4px;
+    font-weight: bold;
+    letter-spacing: -0.2px;
+    transition: all 0.3s ease 0s;
+    user-select: none;
+    outline-style: none;
+    cursor: pointer;
+    height: 48px;
+    padding: 0px 32px;
+    font-size: 16px;
+    color: white;
+    background-color: var(--blue-bold);
+    width: 100%;
+}
+
+.mrt-button:hover{
+	background-color: var(--blue-hover);	
+}
+	
+.css-jgs6n:disabled {
+    background-color: var(--blue-light);
+    pointer-events: none;
+}
+
+.ButtonArea > button {
+    width: 100%;
+    padding: 0px 8px;
+}
+
+.Join {
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.AgreementList-Notices {
+    width: 100%;
+}
+
+.AgreementList-Notices-Content {
+    color: var(--gray-500);
+    font-size: 12px;
+    line-height: 1.5;
+}

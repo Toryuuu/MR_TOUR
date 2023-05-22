@@ -1,0 +1,1124 @@
+@charset "UTF-8";
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --primary: #51abf3;
+    --secondary: #33b893;
+    --warning: #ffbf00;
+    --error: #fa5b4a;
+    --gray-50: #f8f9fa;
+    --gray-60: #f5f6f7;
+    --gray-80: #f1f3f5;
+    --gray-100: #e9ecef;
+    --gray-200: #dee2e6;
+    --gray-300: #ced4da;
+    --gray-400: #adb5bd;
+    --gray-500: #848c94;
+    --gray-600: #666d75;
+    --gray-700: #495056;
+    --gray-800: #343a40;
+    --gray-900: #212529;
+    --gray-1000: #141719;
+    --blue-50: #f5fbff;
+    --blue-80: #e7f4fd;
+    --blue-100: #cbe7fd;
+    --blue-200: #a7d4f9;
+    --blue-300: #79bef5;
+    --blue-400: #51abf3;
+    --blue-500: #2b96ed;
+    --blue-600: #1583db;
+    --blue-700: #0a70c2;
+    --blue-800: #025ba5;
+    --blue-900: #01457d;
+    --green-50: #e6f8f3;
+    --green-80: #d7f6ee;
+    --green-100: #94e7d1;
+    --green-200: #71d2b8;
+    --green-300: #58caab;
+    --green-400: #33b893;
+    --green-500: #27ab86;
+    --green-600: #1c9674;
+    --green-700: #137b5e;
+    --green-800: #10634c;
+    --green-900: #0a4534;
+    --yellow-50: #fff8e1;
+    --yellow-80: #fff2c6;
+    --yellow-100: #ffe182;
+    --yellow-200: #ffd74e;
+    --yellow-300: #ffc929;
+    --yellow-400: #ffbf00;
+    --yellow-500: #ffad01;
+    --yellow-600: #ff9a00;
+    --yellow-700: #f78000;
+    --yellow-800: #db5600;
+    --yellow-900: #b94100;
+    --red-50: #fbf1ef;
+    --red-80: #ffd4cc;
+    --red-100: #ffaea1;
+    --red-200: #ff8d7c;
+    --red-300: #fe6a54;
+    --red-400: #fa5b4a;
+    --red-500: #ec4937;
+    --red-600: #dd3c2a;
+    --red-700: #c83323;
+    --red-800: #aa2a1b;
+    --red-900: #8d2115;
+    --elevation-z1: 0 2px 4px 0 rgba(33, 37, 41, 0.1);
+    --elevation-z2: 0 4px 8px 0 rgba(33, 37, 41, 0.1);
+    --elevation-z3: 0 8px 16px 0 rgba(33, 37, 41, 0.15);
+    --elevation-z4: 0 12px 24px 0 rgba(33, 37, 41, 0.15);
+    --elevation-z0-border: 0 0 0 1px var(--gray-100);
+    --elevation-z1-border: 0 2px 4px 0 rgba(0, 0, 0, 0.1),0 0 0 1px var(--gray-100);
+    --elevation-z2-border: 0 4px 8px 0 rgba(33, 37, 41, 0.1),0 0 0 1px var(--gray-100);
+    --elevation-z3-border: 0 8px 16px 0 rgba(33, 37, 41, 0.15),0 0 0 1px var(--gray-100);
+    --elevation-z4-border: 0 12px 24px 0 rgba(33, 37, 41, 0.15),0 0 0 1px var(--gray-100);
+    --motion-easing-basic: cubic-bezier(0.4, 0, 0.2, 1);
+    --motion-easing-linear-out: cubic-bezier(0, 0, 0.2, 1);
+    --motion-easing-linear-in: cubic-bezier(0.4, 0, 1, 1);
+    --z-toast: 60000;
+    --z-screen-loading: 50000;
+    --z-alert: 40000;
+    --z-alert-above-screen-loading: 51000;
+    --z-popup: 30000;
+    --z-dialog: 20000;
+    --z-bottomsheet: 10000;
+    --z-bottomsheet-above-dialog: 21000;
+}
+
+
+*, ::before, ::after {
+    font-family: "SF Pro KR", "SF Pro Display", "SF Pro Icons", -apple-system, BlinkMacSystemFont, "Noto Sans KR", "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+    letter-spacing: 0px;
+    -webkit-font-smoothing: antialiased;
+    overflow-anchor: none;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+*, *::before, *::after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+body {
+    display: block;
+    margin: 8px;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    color: var(--gray-800);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #373a3c;
+    background-color: #fff;
+}
+
+body {
+    margin: 0;
+}
+
+
+html, body {
+    background: #fff;
+    letter-spacing: -.2px;
+}
+
+html, body {
+    letter-spacing: -0.3px;
+    font-size: 10px;
+}
+
+html, body {
+    letter-spacing: -1px;
+    -webkit-font-smoothing: antialiased;
+}
+
+div {
+    display: block;
+}
+
+/* main section */
+@media (min-width: 768px)
+.orderForm--Container {
+    width: 1060px;
+    margin: auto;
+    padding-top: 40px;
+}
+
+.orderForm--Container {
+    border-bottom: 120px solid var(--white);
+}
+
+main {
+    display: block;
+}
+
+main {
+    position: relative;
+}
+
+.orderForm--Form {
+    background-color: var(--white);
+    margin-bottom: 32px;
+}
+
+form {
+    display: block;
+    margin-top: 10em;
+}
+
+@media (min-width: 768px) /* 타이틀(예약하기) */
+.orderForm--Title {
+    margin: auto 0px 32px;
+    font-weight: bold;
+    font-size: 28px;
+    letter-spacing: -0.4px;
+    line-height: 36px;
+}
+
+.orderForm--Title {
+    margin: 24px 16px 16px;
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: -0.4px;
+    line-height: 32px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    margin-bottom: 0.5rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+/* 예약하기 아래 본문 */
+.orderForm--Content {
+    display: flex;
+    flex-direction: row;
+}
+
+/* 왼쪽 섹션 */
+@media (min-width: 768px)
+.orderForm--LeftContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.orderForm--LeftContainer {
+    width: 100%;
+}
+
+@media (min-width: 768px)
+<style>
+.sectionContainer--Container {
+    max-width: 680px;
+}
+
+@media (min-width: 768px)
+<style>
+.sectionContainerHeader--Wrapper {
+    padding: 0px 0px 16px;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+}
+
+/* 각 섹션 제목들(상품정보, 결제정보 등) */
+.sectionContainerHeader--Wrapper { 
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 20px 16px;
+    letter-spacing: -0.6px;
+}
+
+.sectionContainerHeader--Box {
+    display: flex;
+}
+
+@media (min-width: 768px)
+<style>
+.sectionContainerHeader--Title { 
+    font-size: 22px;
+}
+
+.sectionContainerHeader--Title {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: -0.6px;
+}
+
+h1, h2, h3, h4, h5 {
+    margin: 0px;
+}
+
+@media (min-width: 768px) /* 타이틀 아래 hr */
+.title--Underbar {
+    border-bottom: 1px solid var(--gray-400);
+}
+
+.title--Underbar {
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-image: initial;
+    margin: 0px;
+    border-bottom: 1px solid var(--gray-100);
+    padding: 0px;
+    width: auto;
+}
+
+hr {
+    height: 0;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+hr {
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+}
+
+/* 각 섹션의 제목을 제외한 바디 부분 */
+@media (min-width: 768px)
+.sectionContainer--Body {
+    padding: 32px 0px;
+}
+
+.sectionContainer--Body {
+    padding: 20px 16px;
+}
+
+/* 예약한 상품 정보 */
+.productInfoSummary--TitleWrapper {
+    display: flex;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 24px;
+    margin-bottom: 16px;
+}
+
+.productInfoSummary--ImageWrapper {
+    width: 72px;
+    height: 72px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    box-shadow: rgb(33 37 41 / 15%) 0px 0px 0px 1px inset;
+    border-radius: 4px;
+    margin-right: 16px;
+}
+
+.productInfoSummary--Image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+img {
+    vertical-align: middle;
+}
+
+img {
+    border: 0;
+}
+
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+.productInfoSummary--TextWrapper {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    flex: 1 1 0%;
+}
+
+@media (min-width: 768px)
+.productInfoSummary--Title {
+    font-size: 18px;
+}
+
+.productInfoSummary--Title {
+    margin-bottom: 4px;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 24px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.productInfoSummary--Schedule {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--gray-500);
+}
+
+.reservationDate--Container {
+    display: flex;
+    flex-direction: row;
+}
+
+.reservationDate--Time {
+    display: block;
+}
+
+@media (min-width: 768px)
+.reservationDate--Wrapper {
+    margin-left: 4px;
+}
+
+.reservationDate--Wrapper {
+    display: flex;
+}
+
+p, span, strong, small {
+    color: inherit;
+}
+
+.productInfoOptions--OptionWrapper { 
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    border-radius: 4px;
+    gap: 2px;
+}
+
+ul, ol, dl {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 15px;
+}
+
+li {
+    outline: none;
+}
+
+ol, ul, dl {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.css-g62joy--ProductInfoOptions--OptionWrapper > li {
+    background-color: var(--gray-50);
+    padding: 12px;
+}
+
+.productInfoOptions--Option {
+    display: flex;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    list-style-type: none;
+}
+
+.productInfoOptions--OptionText {
+    flex: 1 1 0%;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.4px;
+}
+
+.productInfoOptions--OptionName {
+    max-width: 100%;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.productInfoOptions--OptionPrice {
+    width: 100px;
+    margin-left: 4px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.4px;
+    text-align: right;
+}
+
+.productInfoOptions--OptionWrapper > li {
+    background-color: var(--gray-50);
+    padding: 12px;
+}
+
+.productInfoPrice--Container { /* 총 상품 금액 */
+    display: flex;
+    flex-direction: column;
+}
+
+.productInfoPrice--TotalPriceWrapper {
+    display: flex;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.productInfoPrice--TotalPriceText {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.productInfoPrice--TotalPriceNumber {
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 24px;
+}
+
+/* 예약자 정보 섹션 */
+.reservationPersonInfo--Wrapper {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.reservationPersonInfo--Summary {
+    display: flex;
+    flex-direction: column;
+    margin-right: 16px;
+}
+
+.reservationPersonInfo--Summary > div {
+    margin-bottom: 8px;
+}
+
+.infoField--Field {
+    display: flex;
+    flex-direction: row;
+}
+
+.infoField--Title {
+    width: 100px;
+    font-size: 14px;
+    font-weight: normal;
+    color: var(--gray-500);
+    margin-right: 4px;
+}
+
+.infoField--Content {
+    flex: 1 1 0%;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.infoField--NeededContent { /* 정보가 입력되어 있지 않을 경우 나타남 */
+    flex: 1 1 0%;
+    font-size: 14px;
+    font-weight: normal;
+    color: var(--yellow-700);
+}
+
+.infoChange--Btn { /* 정보 변경 버튼 */
+    flex: 0 0 auto;
+}
+
+.infoChange--Btn--2 {
+    position: relative;
+    display: inline-flex;
+}
+
+a, area, button, [role="button"], input, label, select, summary, textarea {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
+[role="button"] {
+    cursor: pointer;
+}
+
+.infoChange--Btn--3 {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    text-align: center;
+    border: 0px;
+    border-radius: 4px;
+    font-weight: bold;
+    letter-spacing: -0.2px;
+    transition: all 0.3s ease 0s;
+    user-select: none;
+    outline-style: none;
+    cursor: pointer;
+    height: 40px;
+    padding: 0px 16px;
+    font-size: 14px;
+    color: var(--gray-700);
+    background-color: var(--gray-100);
+}
+
+input:not([type="checkbox"]):not([type="radio"]), button, textarea, select {
+    appearance: none;
+}
+
+button, a {
+    outline: none;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button {
+    overflow: visible;
+}
+
+.buttonSpan {
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.reservationPersonInfo--Highlight {
+    margin-top: 8px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.4px;
+    color: var(--blue-500);
+}
+
+p, dt, dd {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/* 추가 예약 정보 */
+.sectionContainerHeader--Required {
+    font-size: 14px;
+    letter-spacing: -0.4px;
+    align-self: flex-end;
+    padding-left: 4px;
+}
+
+.productRequireInfos--FlagWrapper:not(:last-of-type) {
+    border-bottom: 1px solid rgb(233, 236, 239);
+}
+
+.productRequireInfos--FlagWrapper {
+    padding: 32px 0px;
+}
+
+.productRequireInfos--FlagTitle {
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 24px;
+    margin-bottom: 6px;
+}
+
+.productRequireInfos--FlagSubTitle {
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.productRequireInfos--TitleWrapper:last-of-type {
+    padding-top: 24px;
+}
+
+.productRequireInfos--Title { /* 체크인 고객 이름/예약자 이름 */
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.additionalInfoContainer--Container:not(:first-of-type) {
+    margin-top: 16px;
+}
+
+.additionalInfoContainer--Label { 
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray-700);
+    letter-spacing: -0.2px;
+    margin-bottom: 8px;
+}
+
+.text--TextInput {
+    width: 100%;
+    font-size: 14px;
+    padding: 13px 12px;
+    border: 0px;
+    box-shadow: inset 0 0 0 1px var(--gray-300);
+    border-radius: 4px;
+    appearance: none;
+    cursor: pointer;
+    max-width: 250px;
+}
+
+input, input:focus, input::before, input::after {
+    border: 0px;
+    outline: 0px;
+    touch-action: manipulation;
+}
+
+input, button, select, textarea {
+    margin: 0;
+    line-height: inherit;
+    border-radius: 0;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+
+.additionalInfoContainer--Caption {
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+    color: var(--gray-500);
+}
+
+
+.partnerCustomInfos--OptionWrapper:not(:first-of-type) {
+    padding-top: 32px;
+}
+
+.partnerCustomInfos--OptionTitle { /*기타 요청 사항*/
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 24px;
+    margin-bottom: 6px;
+}
+
+.additionalInfoContainer--Container:not(:first-of-type) {
+    margin-top: 16px;
+}
+
+.textArea--TextAreaInput {
+    width: 100%;
+    padding: 12px;
+    min-width: 238px;
+    min-height: 85px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+    color: var(--gray-800);
+    border-radius: 4px;
+    border: 0px;
+    box-shadow: inset 0 0 0 1px var(--gray-300);
+}
+
+textarea, textarea:focus {
+    outline: 0px;
+}
+
+textarea {
+    overflow: hidden;
+    overflow-y: auto;
+    resize: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.partnerCustomInfos--GuideText {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.2px;
+    color: var(--gray-700);
+}
+
+
+
+/* 오른쪽 섹션 */
+.floatingContainer--Container {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    position: sticky;
+    top: 32px;
+    left: 0px;
+    margin-left: 40px;
+    border-radius: 4px;
+    background-color: var(--white);
+    border: solid 1px var(--gray-200);
+}
+
+.floatingContainer--Wrapper {
+    padding: 32px 24px;
+    width: 340px;
+}
+
+@media (min-width: 768px)
+.sectionContainer--Body {
+    padding: 24px 0px 40px;
+}
+
+@media (min-width: 768px)
+.settledInfo--Container {
+    gap: 12px;
+}
+
+.settledInfo--Container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.settledInfo--Info {
+    display: flex;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+@media (min-width: 768px)
+.settledInfo--Text {
+    line-height: 20px;
+}
+
+.settledInfo--Text {
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.4px;
+    font-weight: 400;
+    color: var(--gray-800);
+}
+
+@media (min-width: 768px)
+.totalPriceInfo--Container {
+    left: -24px;
+    padding: 20px 24px;
+}
+
+.totalPriceInfo--Container {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    left: -16px;
+    width: 100%;
+    box-sizing: content-box;
+    background-color: var(--blue-50);
+    padding: 26px 16px;
+    color: var(--blue-500);
+}
+
+
+@media (min-width: 768px)
+.totalPriceInfo--Text {
+    font-weight: 600;
+}
+
+.totalPriceInfo--Text {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.4px;
+}
+
+.totalPriceInfo--Price {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.paymentInfo--Wrapper { /* 숙소에 대해 알아두실 사항 */
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0px 0px;
+    gap: 8px;
+}
+
+.productNoticeInfo--Wrapper {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.productNoticeInfo--Text--productNoticeInfo--Button { 
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.4px;
+    text-decoration: underline;
+    margin-right: 2px;
+    cursor: pointer;
+    color: var(--gray-500);
+}
+
+.productNoticeInfo--customIconStyle { /* i 아이콘 */
+    display: inline-block;
+    border: 0px;
+    width: 12px;
+    height: 12px;
+}
+
+@media (min-width: 768px)
+.css-1fqnim8--SectionContainer--Body {
+    padding: 24px 0px 40px;
+}
+
+@media (min-width: 768px)
+.policyForm--Container {
+    padding: 0px;
+}
+
+@media (min-width: 768px)
+.agree--All {
+    padding-bottom: 16px;
+}
+
+.agree--All { /* 모두 동의 앞 체크박스 */
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    font-weight: bold;
+    padding-bottom: 12px;
+}
+
+.agree--Checkbox { /* 동의 앞 체크박스 */
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px var(--gray-300);
+    background-color: var(--white);
+    position: relative;
+    transition: background 0.25s var(--motion-easing-basic),box-shadow 0.25s var(--motion-easing-basic);
+    width: 18px;
+    height: 18px;
+}
+
+.agree--Checkbox-2 {
+    display: block;
+    position: absolute;
+    inset: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    opacity: 0;
+    padding: 0px;
+    margin: 0px;
+    cursor: pointer;
+}
+
+.agree--All > label {
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.term--label {
+    flex: 1 1 auto;
+    font-size: 14px;
+    line-height: 18px;
+    padding-left: 10px;
+}
+
+label {
+    margin: 0;
+}
+
+.allTerms--TermContainer {
+    padding: 20px 12px 20px 16px;
+    border: 1px solid var(--gray-200);
+    border-radius: 4px;
+}
+
+.allTerms--TermContainer .mrt-required-term {
+    display: flex;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.allTerms--TermContainer > div {
+    margin-bottom: 20px;
+}
+
+.requiredTerm--box {
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.allTerms--TermContainer .mrt-required-term div > label {
+    font-weight: 400;
+}
+
+.allTerms--TermContainer .mrt-checkbox-label {
+    cursor: pointer;
+}
+
+.termImage {
+    display: inline-block;
+    border: 0px;
+    cursor: pointer;
+}
+
+@media (min-width: 768px)
+.notice--Container {
+    margin-top: 40px;
+    border: none;
+}
+
+.notice--Container {
+    padding: 16px;
+    margin-top: 16px;
+    background-color: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: 4px;
+}
+
+.notice--Text--notice--Title {
+    line-height: 22px;
+    letter-spacing: -0.4px;
+    margin-bottom: 4px;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--gray-800);
+}
+
+.notice--Text {
+    line-height: 22px;
+    letter-spacing: -0.4px;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--gray-700);
+}
+
+/* 결제 버튼 */
+@media (min-width: 768px)
+.css-f7wgr8--PurchaseButton--Wrapper {
+    margin: auto 0px;
+}
+
+.purchaseButton--Wrapper {
+    background-color: var(--white);
+    padding: 0px 16px 16px;
+}
+
+.purchaseButton--disabled { /* 약관에 동의하기 전까지는 클릭 불가 */
+    position: relative;
+    display: inline-flex;
+    width: 100%;
+    cursor: not-allowed;
+}
+
+.purchaseBtn:disabled {
+    background-color: var(--blue-200);
+    pointer-events: none;
+}
+
+.purchaseButton--disabled > button {
+    width: 100%;
+    padding: 0px 8px;
+}
+
+button[disabled], a[disabled] {
+    pointer-events: none !important;
+}
+
+button[disabled], html input[disabled] {
+    cursor: default;
+}
+
+.purchaseBtn {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    text-align: center;
+    border: 0px;
+    border-radius: 4px;
+    font-weight: bold;
+    letter-spacing: -0.2px;
+    transition: all 0.3s ease 0s;
+    user-select: none;
+    outline-style: none;
+    cursor: pointer;
+    height: 48px;
+    padding: 0px 32px;
+    font-size: 16px;
+    color: white;
+    width: 100%;
+}
+
+
+.purchaseBtn {
+    color: #000;
+    background: #bbddff;
+    border-color: transparent;
+}
+
+.purchaseBtn:hover {
+    color: #000;
+    background: #0080ff;
+    border-color: transparent;
+}
